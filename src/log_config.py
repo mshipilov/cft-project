@@ -1,0 +1,27 @@
+import logging
+from logging import handlers
+import os
+
+log_dir = "logs"
+os.makedirs(log_dir, exist_ok=True)
+
+root_logger = logging.getLogger('app') 
+root_logger.setLevel(logging.DEBUG)  # Set lowest level at root
+
+# add handlers only if not added earlier
+if not root_logger.handlers:
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s')
+
+    file_handler = handlers.RotatingFileHandler(
+        os.path.join(log_dir, "app.log"), 
+        maxBytes=5*1024*1024, 
+        backupCount=3
+    )
+    file_handler.setFormatter(formatter)
+    file_handler.setLevel(logging.DEBUG)
+    root_logger.addHandler(file_handler)
+
+    console_handler = logging.StreamHandler()
+    console_handler.setFormatter(formatter)
+    console_handler.setLevel(logging.DEBUG)
+    root_logger.addHandler(console_handler)

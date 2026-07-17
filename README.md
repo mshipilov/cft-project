@@ -9,7 +9,7 @@
 ### Порядок запуска
 - скачать проект
 
-`git clone https://github.com/mshipilov/cft-project/tree/main`
+`git clone https://github.com/mshipilov/cft-project`
 
 `cd cft-project`
 - запустить проект
@@ -23,12 +23,16 @@
 ### Порядок запуска
 - скачать проект
 
-`git clone https://github.com/mshipilov/cft-project/tree/main`
+`git clone https://github.com/mshipilov/cft-project`
 
 `cd cft-project`
 - запустить базу данных с админкой
 
 `docker-compose up pgdatabase pgadmin`
+
+- установить зависимости
+
+`poetry install`
 
 - запустить приложение
 
@@ -38,7 +42,7 @@
 # Инструкция по использованию
 Приложение состоит из бэкенд-части, базы данных (postgres) и админки для базы данных
 ## Бэкенд-часть
-Эндпоинты находятся на localhost:8008/docs (это дефолтный порт, необходимо указать другой если были изменения). Здесь можно авторизоваться как юзер (логин user@user.com пароль 123) или как админ (логин admin@admin.com пароль 123).
+Эндпоинты находятся на localhost:8008/docs. Здесь можно авторизоваться как юзер (логин user@user.com пароль 123) или как админ (логин admin@admin.com пароль 123).
 
 Юзер может смотреть список комнат, доступные слоты для бронирования, создавать и удалять свои бронирования, смотреть список своих бронирований.
 

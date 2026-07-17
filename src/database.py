@@ -9,6 +9,7 @@ from .models import Base
 load_dotenv()
 
 we_inside_docker_container = os.path.exists('/.dockerenv')
+print('we inside Docker container: ', we_inside_docker_container)
 
 DB_USER=os.getenv('POSTGRES_USER')
 DB_PASS=os.getenv('POSTGRES_PASSWORD')

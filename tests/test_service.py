@@ -9,8 +9,6 @@ from src.database import AsyncSessionLocal
 from src.users.service import read_users
 from src.rooms.service import read_rooms, read_available_slots
 from src.rooms.schemas import RoomResponse, TimeSlotResponse
-from src.rooms.service import populate_db_time_slots, populate_db_rooms
-from src.users.service import populate_db_users
 from src.bookings.service import create_booking, read_bookings, delete_booking
 from src.bookings.schemas import BookingCreate, BookingResponse
 
